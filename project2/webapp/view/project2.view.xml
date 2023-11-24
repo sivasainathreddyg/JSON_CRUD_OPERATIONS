@@ -1,0 +1,35 @@
+<mvc:View xmlns:table="sap.ui.table" controllerName="project2.controller.project2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table id="idTable" items="{/hhh}" delete="onDelete"  mode="Delete" inset="false">
+                <columns>
+                    <Column id="_IDGenColumn1" hAlign="Center">
+                        <Text id="_IDGenText1" text="Name" ></Text>
+                    </Column>
+                    <Column id="_IDGenColumn2" >
+                        <Text id="_IDGenText2" text="Salary"></Text>
+                    </Column>
+                    <Column id="_IDGenColumn3" >
+                        <Text id="_IDGenText3" text="Desigination"></Text>
+                    </Column>
+                </columns>
+                <items >  
+                    <ColumnListItem id="_IDGenColumnListItem1" >
+                    <cells> 
+                    <Text id="_IDGenText4" text="{firstname} {lastname}"/>
+                    <Text id="_IDGenText5" text="{salary}"/>
+                    <Text id="_IDGenText6" text="{Desigination}"/>
+                    </cells>
+                        
+                    </ColumnListItem>
+                    
+                </items>
+            </Table>
+<Text id="text1" text="{/newProp}"/>
+        </content>
+
+        
+    </Page>
+</mvc:View>
