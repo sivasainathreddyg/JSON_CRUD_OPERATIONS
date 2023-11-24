@@ -1,6 +1,7 @@
 <mvc:View xmlns:table="sap.ui.table" controllerName="project2.controller.project2"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
+
     <Page id="page" title="{i18n>title}">
         <content>
             <Table id="idTable" items="{/hhh}" delete="onDelete"  mode="Delete" inset="false">
