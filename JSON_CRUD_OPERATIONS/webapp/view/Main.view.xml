@@ -1,0 +1,196 @@
+<mvc:View
+    xmlns:cards="sap.f.cards"
+    controllerName="com.demo.project3.controller.Main"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:svm="sap.ui.comp.smartvariants"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        titleAlignment="Center"
+        backgroundDesign="Standard"
+    >
+        <f:DynamicPageHeader>
+            <f:content>
+                <fb:FilterBar search=".onSearch">
+                    <fb:filterGroupItems>
+                        <fb:FilterGroupItem
+                            name="Name"
+                            label="Gender"
+                            groupName="Group1"
+                            visibleInFilterBar="true"
+                        >
+                            <fb:control>
+                                <ComboBox
+                                    id="genderComboBox"
+                                    items="{/}"
+                                    selectionChange="onComboBoxSelectionChange"
+                                >
+                                    <items>
+                                        <core:Item
+                                            xmlns:core="sap.ui.core"
+                                            key="{Key}"
+                                            text="{Gender}"
+                                            id="item0"
+                                        />
+                                    </items>
+                                </ComboBox>
+                            </fb:control>
+                        </fb:FilterGroupItem>
+                        <fb:FilterGroupItem  name="Status" label="Status" groupName="Group1" visibleInFilterBar="true"> 
+                            <fb:control>
+                                <ComboBox
+                                    id="genderComboBox1"
+                                    items="{/}"
+                                    selectionChange="onComboBoxSelectionChange"
+                                >
+                                    <items>
+                                        <core:Item
+                                            xmlns:core="sap.ui.core"
+                                            key="{Key}"
+                                            text="{Status}"
+                                            id="item1"
+                                        />
+                                    </items>
+                                </ComboBox>
+                            </fb:control>
+                        </fb:FilterGroupItem>
+                    </fb:filterGroupItems>
+                </fb:FilterBar>
+            </f:content>
+        </f:DynamicPageHeader>
+
+        <content>
+            <Table
+                id="studentsTable"
+                items="{/students}"
+                delete="onDelete"
+                mode="MultiSelect"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <SearchField
+                            id="serialNumberInput"
+                            width="200px"
+                            placeholder="Search"
+                            liveChange=".onSearch"
+                        />
+                        <!-- <SearchField id="serialNumberInput1" width="200px" placeholder="Enter Name" liveChange=".onSearch"></SearchField> -->
+                        <!-- <Button text="GetDetails" press="ongetdetails" ></Button> -->
+                        <!-- <Label text="ComboBox in a Success state" labelFor="idComboBoxSuccess"></Label> -->
+                        <!-- <ComboBox
+                            id="genderComboBox2"
+                            items="{/}"
+                            change="onComboBoxSelectionChange"
+                            selectionChange="onComboBoxSelectionChange"
+                        >
+                            <items>
+                                <core:Item
+                                    xmlns:core="sap.ui.core"
+                                    key="{Key}"
+                                    text="{Gender}"
+                                    id="item2"
+                                />
+                                
+                            </items>
+                        </ComboBox> -->
+
+                        <ToolbarSpacer />
+                        <Button
+                            text="DeleteAll"
+                            press="DetletRows"
+                            icon="sap-icon://delete"
+                            iconFirst="false"
+                            type="Reject"
+                        />
+                        <Button
+                            icon="sap-icon://add"
+                            text="AddStudentDetails"
+                            press="addstudent"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column>
+                        <Text text="SerialNumber" />
+                    </Column>
+                    <Column>
+                        <Text text="StudentName" />
+                    </Column>
+                    <Column>
+                        <Text text="Gender" />
+                    </Column>
+                    <Column>
+                        <Text text="ContactNumber" />
+                    </Column>
+                    <Column>
+                        <Text text="Math-A-Marks" />
+                    </Column>
+                    <Column>
+                        <Text text="Math-B-Marks" />
+                    </Column>
+                    <Column>
+                        <Text text="PhysicsMarks" />
+                    </Column>
+                    <Column>
+                        <Text text="EnglishMarks" />
+                    </Column>
+                    <Column>
+                        <Text text="Status" />
+                    </Column>
+
+                    <Column hAlign="Center">
+                        <Text text="Action" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        type="Navigation"
+                        press="OnNavigation"
+                    >
+                        <cells>
+                            <Text text="{SerialNumber}" />
+                            <Text text="{StudentName}" />
+                            <Text text="{Gender}" />
+                            <Text text="{ContactNumber}" />
+                            <Text text="{Math_A_Marks}" />
+                            <Text text="{Math_B_Marks}" />
+                            <Text text="{Physics_Marks}" />
+                            <Text text="{English_Marks}" />
+                            <Text text="{Status}" />
+
+                            <HBox justifyContent="End">
+                                <Button
+                                    icon="sap-icon://delete"
+                                    press="DeleteStudent"
+                                    type="Reject"
+                                    width="50px"
+                                    class="sapUiSmallMarginEnd "
+                                />
+
+                                <Button
+                                    icon="sap-icon://edit"
+                                    press="EditStudent"
+                                    type="Attention"
+                                    class="customButton"
+                                    width="50px"
+                                    id="editbutton"
+                                />
+                            </HBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <Button
+                text="next"
+                press="Navigationn"
+            />
+        </content>
+    </Page>
+</mvc:View>

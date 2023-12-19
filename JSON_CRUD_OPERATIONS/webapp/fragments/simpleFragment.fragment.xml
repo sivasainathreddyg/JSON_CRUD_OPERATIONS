@@ -1,0 +1,210 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog
+        id="dialogid"
+        class="sapUiSmallMargin"
+        title=" Add Student Information"
+
+
+    >
+        <content>
+            <FlexBox justifyContent="Center">
+                <VBox>
+                    <HBox
+                        alignItems="Center"
+                        justifyContent="SpaceAround"
+                    >
+                        <Label
+                            text="Serial Number:"
+                            class="sapUiSmallMargin"
+                            required="true"
+                        />
+                        <Input
+                            value="{/SerialNumber}"
+                            placeholder="Enter Serial Number"
+                            style="width: 500px"
+                            liveChange="onSerialNumberChange"
+                            type="Number"
+                            enabled="{= !${/editMode}}"
+                            id="fragmentSerialinput"
+                        />
+                    </HBox>
+                </VBox>
+            </FlexBox>
+            <FlexBox justifyContent="Center">
+                <VBox>
+                    <HBox
+                        alignItems="Center"
+                        justifyContent="SpaceAround"
+                    >
+                        <Label
+                            text="Student Name :"
+                            class="sapUiSmallMargin"
+                            required="true"
+                        />
+                        <Input
+                            value="{/StudentName}"
+                            placeholder="Enter Student Name"
+                            style="width: 500px;"
+                        />
+                    </HBox>
+                </VBox>
+            </FlexBox>
+            <FlexBox justifyContent="Center">
+                <VBox>
+                    <HBox>
+                        <Label text="Gender :"  />
+                    
+                
+                <RadioButtonGroup textDirection="LTR"
+                    id="myRadioButtonGroup1"
+                    selectedIndex="{/SelectedIndex}"
+                    columns="2"
+                    select="onRadioButtonSelected2"
+                >
+                    <RadioButton text="Male" />
+                    <RadioButton text="Female" />
+                </RadioButtonGroup>
+                </HBox>
+                </VBox>
+            </FlexBox>
+
+            <FlexBox justifyContent="Center">
+                <VBox>
+                    <HBox
+                        alignItems="Center"
+                        justifyContent="SpaceAround"
+                    >
+                        <Label
+                            text="Contact Number:"
+                            class="sapUiSmallMargin"
+                            required="true"
+                        />
+                        <Input
+                            value="{/ContactNumber}"
+                            placeholder="Enter Contact Number"
+                            style="width: 500px;"
+                        />
+                    </HBox>
+                </VBox>
+            </FlexBox>
+            <FlexBox justifyContent="Center">
+                <VBox>
+                    <HBox
+                        alignItems="Center"
+                        justifyContent="SpaceAround"
+                    >
+                        <Label
+                            text="Math A_Marks:"
+                            class="sapUiSmallMargin"
+                            required="true"
+                        />
+                        <Input
+                            value="{/Math_A_Marks}"
+                            placeholder="Enter Math A-Marks"
+                            style="width: 500px;"
+                        />
+                    </HBox>
+                </VBox>
+            </FlexBox>
+            <FlexBox justifyContent="Center">
+                <VBox>
+                    <HBox
+                        alignItems="Center"
+                        justifyContent="SpaceAround"
+                    >
+                        <Label
+                            text="Math B_Marks:"
+                            class="sapUiSmallMargin"
+                            required="true"
+                        />
+                        <Input
+                            value="{/Math_B_Marks}"
+                            placeholder="Enter Math B-Marks "
+                            style="width: 500px;"
+                        />
+                    </HBox>
+                </VBox>
+            </FlexBox>
+            <FlexBox justifyContent="Center">
+                <VBox>
+                    <HBox
+                        alignItems="Center"
+                        justifyContent="SpaceAround"
+                    >
+                        <Label
+                            text="physics Marks:"
+                            class="sapUiSmallMargin"
+                            required="true"
+                        />
+                        <Input
+                            value="{/Physics_Marks}"
+                            placeholder="Enter Physics Marks"
+                            style="width: 500px;"
+                        />
+                    </HBox>
+                </VBox>
+            </FlexBox>
+            <FlexBox justifyContent="Center">
+                <VBox>
+                    <HBox
+                        alignItems="Center"
+                        justifyContent="SpaceAround"
+                    >
+                        <Label
+                            text="English Marks:"
+                            required="true"
+                            class="sapUiSmallMargin"
+                        />
+                        <Input
+                            value="{/English_Marks}"
+                            placeholder="Enter English Marks "
+                            style="width: 500px;"
+                        />
+                    </HBox>
+                </VBox>
+            </FlexBox>
+             <FlexBox justifyContent="Center">
+                <VBox>
+                    <HBox>
+                        <Label text="Result :"  />
+                    
+                
+                <RadioButtonGroup
+                id="myRadioButtonGroup"
+                selectedIndex="{/SelectedIndex2}"
+                columns="2"
+                select="onRadioButtonSelected"
+            >
+                <RadioButton text="Pass" />
+                <RadioButton text="Fail" />
+            </RadioButtonGroup>
+                </HBox>
+                </VBox>
+            </FlexBox>
+        </content>
+        <buttons>
+            <!-- <beginButton> -->
+            <Button
+                text="Submit"
+                press="onSubmit"
+                class="customButton"
+                type="Accept"
+                enabled="{/isSubmitEnabled}"
+                id="fragmentSubmitButtonID"
+            />
+
+            <!-- </beginButton> -->
+            <!-- <endButton> -->
+            <Button
+                text="Cancel"
+                press="oncancel"
+                class="customButton"
+                type="Reject"
+            />
+            <!-- </endButton> -->
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

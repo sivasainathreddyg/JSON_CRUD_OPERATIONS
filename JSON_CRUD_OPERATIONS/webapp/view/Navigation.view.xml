@@ -1,0 +1,38 @@
+<mvc:View controllerName="com.demo.project3.controller.Navigation" xmlns:form="sap.ui.layout.form" 
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml">
+    <Page id="page1" title="{i18n>title}">
+    <content>
+    <Text text="Navigate to second page"></Text>
+     <form:SimpleForm  id="idForm">
+    <Label text="Serial Number"></Label>
+    <Text  id="SerialNo" text="{formModel>/SerialNumber}" width="200px"></Text>
+    <Label text="Student Name"></Label>
+    <Text  id="StudentName" text="{formModel>/StudentName}"  width="200px"></Text>
+    <Label text="Gender"></Label>
+    <Text  id="Gender" text="{formModel>/Gender}"  width="200px"></Text>
+    <Label text="Contact Number"></Label>
+    <Text  id="ContactNo" text="{formModel>/ContactNumber}" width="200px"></Text>
+    <Label text="Math_A_Marks"></Label>
+    <Text  id="Math_A_Marks" text="{formModel>/Math_A_Marks}" width="200px"></Text>
+    <Label text="Math_B_Marks"></Label>
+    <Text  id="Math_B_Marks" text="{formModel>/Math_B_Marks}" width="200px"></Text>
+    <Label text="Pyhsic_Marks"></Label>
+    <Text  id="Pyhsic_Marks" text="{formModel>/Physics_Marks}" width="200px"></Text>
+    <Label text="English_Marks"></Label>
+    <Text  id="English_Marks" text="{formModel>/English_Marks}"  width="200px"></Text>
+    <Label text="Status"></Label>
+    <Text  id="Status" text="{formModel>/Status}"  width="200px"></Text>
+    </form:SimpleForm>
+    <Button text="sample" press="onbutton"></Button>
+    <Text  id="SerialNo2" text="{formModel>/SerialNumber}" width="200px"></Text>
+    </content>
+   
+    
+
+
+    
+    
+        
+    </Page>
+</mvc:View>
